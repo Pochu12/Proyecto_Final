@@ -38,8 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Comparamos la contraseña que escribió el usuario con la que está guardada
         if (password_verify($contraseña, $hash_guardado)) {
-            echo "Has inciado sesión correctamente, $usuario.";
-            // Aquí podemos poner para abrir sesión y enviar a la tienda
+            session_start();
+            $_SESSION['usuario'] = $usuario; // Guardamos el nombre en la sesión
+            header("Location: ../tienda.php"); // Lo mandamos a la tienda
+            exit;
         } else {
             echo "La contraseña está mal.";
         }
