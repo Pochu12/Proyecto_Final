@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="css/estilazo.css">
+</head>
+<body>
+    <h2>Registro de Nuevo Usuario</h2>
+
+    <form action="php/registro.php" method="POST">
+        <label for="usuario">Tu usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" required><br><br>
+
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="correo" name="correo" required><br><br>
+
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+        <label for="genero">Género:</label><br>
+        <select id="genero" name="genero" required>
+            <option value="">Elige tu género:</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select><br><br>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <p>Si ya tienes una cuenta puedes iniciar sesión desde aquí: <a href="login.html"></a></p>
+</body>
+</html>
