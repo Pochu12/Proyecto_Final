@@ -1,7 +1,6 @@
 <?php
 // Nos conectamos a la base de datos:
 include 'conexion.php';
-
 // Verificamos si se envió el formulario por el método POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
