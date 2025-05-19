@@ -28,12 +28,15 @@ $resultado = $consulta->get_result();
 </head>
 <body>
     <h2>¿Que te apetece ver hoy? <?php echo $_SESSION['usuario']; ?></h2>
-    <h3>Catálogo de productos</h3>
+    
+    <div style="text-align:center;">
+        <h3>Productos en oferta:</h3>
+    </div>
 
     <?php while ($producto = $resultado->fetch_assoc()) { ?>
-        <div style="border:1px solid #ccc; padding:10px; margin:0;">
+        <div style="border:1px solid #ccc; padding:10px; margin:0; font-size: 18px; text-align: center;">
             <!-- Mostramos la imagen de los productos-->
-            <img src="img/<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>" style="max-width:200px; display:block; margin-bottom:10px;">
+            <img src="img/<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>" style="max-width:200px; display: block; margin: 0 auto 10px;">
             
             <p><strong>ID:</strong> <?php echo $producto['referencia']; ?></p>
             <p><strong>Nombre:</strong> <?php echo $producto['nombre']; ?></p>
