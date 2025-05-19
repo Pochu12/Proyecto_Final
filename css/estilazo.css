@@ -1,0 +1,163 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/madera.jpg'); /* Cambia la ruta */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 60px; /* Deja espacio para la nav fija */
+}
+
+
+/* Título */
+h1, h2 {
+    text-align: center;
+    color: rgb(85, 12, 145);
+}
+
+/* Formularios */
+form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #005577;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #003344;
+}
+
+/* Tabla de compras */
+.tabla-compras {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #e6d9f7;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(80, 206, 238, 0.89);
+}
+
+.tabla-compras th, .tabla-compras td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.tabla-compras thead {
+    background-color: rgb(153, 195, 212);
+    color: white;
+    font-weight: bold;
+}
+
+.tabla-compras tbody tr:hover {
+    background-color: #d9b3ff;
+}
+
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 25px;
+    background-color: #6a4c93;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #573b75;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de navegación */
+nav {
+    width: 100%;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Creamos un espacio entre las categorias. */
+nav ul li {
+    margin: 0 20px;
+}
+
+
+
+nav ul li a {
+    display: block;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+
+input[type="submit"].boton-comprar {
+    background-color: #c0392b;
+    color: white;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    font-size: 16px;
+    margin-top: 10px;
+    width: auto; /* evita que herede el 100% */
+}
+
+input[type="submit"].boton-comprar:hover {
+    background-color: #a93226;
+    transform: scale(1.05);
+}

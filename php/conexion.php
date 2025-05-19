@@ -1,6 +1,7 @@
 <?php
 class DatabaseConection {
 
+    //Los datos para poder conectarnos a nuestra base de datos.
     private function dbConect(): bool|mysqli {
         $servidor = "localhost";
         $usuario = "root";

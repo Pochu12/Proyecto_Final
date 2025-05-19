@@ -13,8 +13,8 @@ if (!isset($_SESSION['usuario'])) {
 $bd = new DatabaseConection();
 $conexion = $bd->dbConects();
 
-// Obtenemos los productos
-$consulta = $conexion->prepare("SELECT referencia, nombre, precio FROM productos");
+// Obtenemos los productos (ahora también obtenemos la imagen)
+$consulta = $conexion->prepare("SELECT referencia, nombre, precio, imagen, descripcion FROM productos");
 $consulta->execute();
 $resultado = $consulta->get_result();
 ?>
@@ -27,20 +27,25 @@ $resultado = $consulta->get_result();
     <link rel="stylesheet" href="css/estilazo.css">
 </head>
 <body>
-    <h2>¿Que te apetece ver hoy?, <?php echo $_SESSION['usuario']; ?></h2>
+    <h2>¿Que te apetece ver hoy? <?php echo $_SESSION['usuario']; ?></h2>
     <h3>Catálogo de productos</h3>
 
     <?php while ($producto = $resultado->fetch_assoc()) { ?>
-        <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+        <div style="border:1px solid #ccc; padding:10px; margin:0;">
+            <!-- Mostramos la imagen de los productos-->
+            <img src="img/<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>" style="max-width:200px; display:block; margin-bottom:10px;">
+            
             <p><strong>ID:</strong> <?php echo $producto['referencia']; ?></p>
             <p><strong>Nombre:</strong> <?php echo $producto['nombre']; ?></p>
             <p><strong>Precio:</strong> <?php echo $producto['precio']; ?> €</p>
+            <p><strong>Detalles:</strong> <?php echo $producto['descripcion']; ?></p>
 
             <form action="php/comprar.php" method="POST">
                 <input type="hidden" name="referencia" value="<?php echo $producto['referencia']; ?>">
-                <input type="submit" value="Comprar">
+                <input type="submit" class="boton-comprar" value="Comprar">
             </form>
         </div>
     <?php } ?>
 </body>
 </html>
+
